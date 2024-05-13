@@ -1,0 +1,27 @@
+'''
+Descripttion: 
+version: 
+Author: Ryan Zhang (gitHub.com/hz157)
+Date: 2024-02-26 21:12:43
+LastEditors: Ryan Zhang
+LastEditTime: 2024-04-14 20:25:07
+'''
+from pydantic import BaseModel
+from fastapi.responses import JSONResponse
+from fastapi import HTTPException, status
+from datetime import datetime
+from utils.constant import HTTP, STATUS_CODE
+
+# class ResponseModel(BaseModel):
+#     status: str
+#     message: str
+#     data: dict = {}
+
+
+def Response(httpCode: HTTP, statusCode: STATUS_CODE, message: str, data: dict = None):
+    return JSONResponse(status_code=httpCode, content={
+        'code': statusCode,
+        'message': message,  # 状态码，例如 "success" 或 "error"
+        'data': data,      # 数据内容
+        'datetime': datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # 响应时间
+    })

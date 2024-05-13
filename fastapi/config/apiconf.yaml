@@ -1,0 +1,26 @@
+database:
+  drive: "mysql"
+  host: "127.0.0.1"
+  db: "waf_gd"
+  user: "root"
+  password: "123"
+
+redis:
+  host: "127.0.0.1"
+  port: 6379
+  password: "123"
+
+server:
+  host: "0.0.0.0"
+  port: 38100
+
+log:
+  path: "./logs/syslog"
+  level: "debug"
+  max_days: 30
+  max_size: 100
+
+jwt:
+  key: "123"
+  expire: 86400
+
