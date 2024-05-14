@@ -4,7 +4,7 @@ version:
 Author: Ryan Zhang (gitHub.com/hz157)
 Date: 2024-04-16 00:31:57
 LastEditors: Ryan Zhang
-LastEditTime: 2024-05-14 00:09:54
+LastEditTime: 2024-05-15 02:06:25
 '''
 from io import StringIO
 import json
@@ -19,6 +19,7 @@ from fastapi import APIRouter, Depends, Query
 from pydantic import BaseModel
 from sqlalchemy import desc, asc, func, and_
 from sqlalchemy.orm import Session
+from datetime import datetime
 from starlette.responses import JSONResponse, FileResponse
 from sqlalchemy import literal_column
 from sqlalchemy.orm import Session
@@ -34,6 +35,7 @@ from models.log import LogRecord
 from models.rule import Rule
 from utils.logger import logger
 from utils.serialized import to_dict
+from utils.waf_engine import StartServer
 
 RuleRouter = APIRouter()
 
@@ -53,9 +55,15 @@ async def AddRule(res: ResRule, token: str = Depends(CheckJWTToken), mysql: Sess
         rule.desc = requestBody.desc
         reg = {"op":"is", "val": requestBody.reg, "empty": False, "fileId": requestBody.fileId}
         rule.reg = json.dumps(reg)
+        rule.custom = 0
+        rule.datetime = datetime.now()
         mysql.add(rule)
         mysql.commit()
         LogRecord(mysql, 'INFO', location, f'增加规则{requestBody.name}-成功', token['uid'])
+        server = redis.hgetall('WafServerConfig-8000')
+        print(f"kill -9 {server['PID']}")
+        os.system(f"kill -9 {server['PID']}")
+        StartServer()
         return Response(HTTP.HTTP_200_OK, STATUS_CODE.TOKEN_0_OK,  "SUCCESS")
     except Exception as e:
         logger.error(e)
@@ -77,6 +85,10 @@ async def SwitchRule(res: ResSwitchRule, token: str = Depends(CheckJWTToken), my
             rule.status = "invalid"
         mysql.commit()
         LogRecord(mysql, 'INFO', location, f'切换规则状态{rule.rule_name}-成功', token['uid'])
+        server = redis.hgetall('WafServerConfig-8000')
+        print(f"kill -9 {server['PID']}")
+        os.system(f"kill -9 {server['PID']}")
+        StartServer()
         return Response(HTTP.HTTP_200_OK, STATUS_CODE.TOKEN_0_OK,  "SUCCESS")
     except Exception as e:
         logger.error(e)
