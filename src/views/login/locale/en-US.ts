@@ -1,0 +1,15 @@
+export default {
+  'login.form.title': 'Login to WAF',
+  'login.form.userName.errMsg': 'Username cannot be empty',
+  'login.form.password.errMsg': 'Password cannot be empty',
+  'login.form.login.errMsg': 'Login error, refresh and try again',
+  'login.form.login.success': 'welcome to use',
+  'login.form.userName.placeholder': 'Please Enter Username',
+  'login.form.password.placeholder': 'Please Enter Password',
+  'login.form.rememberPassword': 'Remember password',
+  'login.form.forgetPassword': 'Forgot password',
+  'login.form.login': 'login',
+  'login.form.register': 'register account',
+  'login.banner.slogan1': 'AI enhanced WAF',
+  'login.banner.subSlogan1': 'Empowering WAF through LLM\'s powerful natural language recognition capabilities',
+};

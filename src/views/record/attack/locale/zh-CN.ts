@@ -1,0 +1,35 @@
+export default {
+  'menu.attack.manage': '规则管理',
+  'attack.form.ip': '攻击IP',
+  'attack.form.ip.placeholder': '请输入攻击IP',
+  'attack.form.uuid': '攻击记录UUID',
+  'attack.form.uuid.placeholder': '请输入攻击记录UUID',
+  'attack.form.createdTime': '攻击日期',
+  'attack.operation.create': '新建',
+  'attack.form.search': '查询',
+  'attack.operation.import': '批量导入',
+  'attack.operation.download': '下载',
+  // columns
+  'attack.columns.index': '#',
+  'attack.columns.uuid': 'UUID',
+  'attack.columns.domain': '域名',
+  'attack.columns.url': 'URL',
+  'attack.columns.method': '方法',
+  'attack.columns.proto': '协议',
+  'attack.columns.header': '请求头',
+  'attack.columns.body': '请求体',
+  'attack.columns.ip': '远程地址',
+  'attack.columns.rule_name': '命中规则',
+  'attack.columns.rule_desc': '规则描述',
+  'attack.columns.datetime': '记录时间',
+
+  // size
+  'attack.size.mini': '迷你',
+  'attack.size.small': '偏小',
+  'attack.size.medium': '中等',
+  'attack.size.large': '偏大',
+  // actions
+  'attack.actions.refresh': '刷新',
+  'attack.actions.density': '密度',
+  'attack.actions.columnSetting': '列设置',
+};
