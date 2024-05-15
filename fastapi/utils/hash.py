@@ -1,11 +1,3 @@
-'''
-Descripttion: 
-version: 
-Author: Ryan Zhang (gitHub.com/hz157)
-Date: 2024-04-10 23:06:46
-LastEditors: Ryan Zhang
-LastEditTime: 2024-04-10 23:08:28
-'''
 import hashlib
 
 def DataHash(data: str, salt: str = None, algorithm: str = 'sha256') -> str:

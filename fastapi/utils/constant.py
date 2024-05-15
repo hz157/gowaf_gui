@@ -1,12 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-"""
-Module/Script Name: Rule Tools Interface
-Author: RyanZhang
-Date: 02/26/2024
-
-Description: Reponse Code Enum
-"""
 from enum import Enum
 
 

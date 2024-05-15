@@ -1,11 +1,3 @@
-'''
-Descripttion: 
-version: 
-Author: Ryan Zhang (gitHub.com/hz157)
-Date: 2024-04-11 13:21:28
-LastEditors: Ryan Zhang
-LastEditTime: 2024-04-13 23:25:08
-'''
 from sqlalchemy import Column, Integer, String, DateTime, JSON
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql import func

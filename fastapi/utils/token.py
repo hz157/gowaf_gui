@@ -1,11 +1,3 @@
-'''
-Descripttion: 
-version: 
-Author: Ryan Zhang (gitHub.com/hz157)
-Date: 2024-04-14 21:58:20
-LastEditors: Ryan Zhang
-LastEditTime: 2024-04-14 22:12:22
-'''
 import utils.config as config
 
 from fastapi import Depends, FastAPI, HTTPException

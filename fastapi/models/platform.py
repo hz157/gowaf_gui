@@ -1,20 +1,3 @@
-'''
-Descripttion: 
-version: 
-Author: Ryan Zhang (gitHub.com/hz157)
-Date: 2024-04-16 00:31:58
-LastEditors: Ryan Zhang
-LastEditTime: 2024-04-18 12:08:25
-'''
-'''
-Descripttion: 
-version: 
-Author: Ryan Zhang (gitHub.com/hz157)
-Date: 2024-04-10 16:14:27
-LastEditors: Ryan Zhang
-LastEditTime: 2024-04-10 16:44:29
-'''
-
 class Platform:
     def __init__(self):
         self._os_info = None

@@ -1,11 +1,3 @@
-'''
-Descripttion: 
-version: 
-Author: Ryan Zhang (gitHub.com/hz157)
-Date: 2024-04-16 00:47:01
-LastEditors: Ryan Zhang
-LastEditTime: 2024-04-16 00:51:45
-'''
 from utils.xdbSearcher import XdbSearcher
 
 class IPDatabaseManager:

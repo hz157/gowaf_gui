@@ -1,11 +1,3 @@
-'''
-Descripttion: 
-version: 
-Author: Ryan Zhang (gitHub.com/hz157)
-Date: 2024-02-26 21:12:43
-LastEditors: Ryan Zhang
-LastEditTime: 2024-04-14 20:25:07
-'''
 from pydantic import BaseModel
 from fastapi.responses import JSONResponse
 from fastapi import HTTPException, status

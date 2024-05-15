@@ -1,11 +1,3 @@
-'''
-Descripttion: 
-version: 
-Author: Ryan Zhang (gitHub.com/hz157)
-Date: 2024-04-16 00:31:58
-LastEditors: Ryan Zhang
-LastEditTime: 2024-04-25 04:17:06
-'''
 from datetime import date, datetime
 import datetime
 from sqlalchemy.orm import DeclarativeMeta

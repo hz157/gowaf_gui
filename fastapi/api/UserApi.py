@@ -1,11 +1,3 @@
-'''
-Descripttion: 
-version: 
-Author: Ryan Zhang (gitHub.com/hz157)
-Date: 2024-02-21 21:06:39
-LastEditors: Ryan Zhang
-LastEditTime: 2024-04-17 01:38:18
-'''
 import time
 from pydantic import BaseModel
 from sqlalchemy import and_, func

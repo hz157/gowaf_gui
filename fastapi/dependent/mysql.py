@@ -1,15 +1,3 @@
-"""
-Module/Script Name: MySQL Dependent
-Author: RyanZhang
-Date: 1/12/2023
-
-Description: MySQL数据库依赖
-Interface_List:
-
-Dependencies:
-- sqlalchemy
-
-"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 import utils.config as config

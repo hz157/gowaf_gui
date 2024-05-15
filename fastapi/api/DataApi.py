@@ -1,11 +1,3 @@
-'''
-Descripttion: 
-version: 
-Author: Ryan Zhang (gitHub.com/hz157)
-Date: 2024-04-16 00:31:57
-LastEditors: Ryan Zhang
-LastEditTime: 2024-05-14 00:32:37
-'''
 from io import StringIO
 import time
 import psutil
@@ -353,7 +345,7 @@ async def download_login_log(mysql: Session = Depends(GetMySQL), token: str = De
 
         # 写入数据
         for log in login_logs:
-            print([log.id, log.user, log.status, log.login_ip, str(log.login_time)])
+            # print([log.id, log.user, log.status, log.login_ip, str(log.login_time)])
             writer.writerow([log.id, log.user, log.status, log.login_ip, str(log.login_time)])
 
         # 重置文件读取指针到开始位置
