@@ -1,11 +1,3 @@
-'''
-Descripttion: 
-version: 
-Author: Ryan Zhang (gitHub.com/hz157)
-Date: 2024-04-16 00:31:57
-LastEditors: Ryan Zhang
-LastEditTime: 2024-05-15 02:44:24
-'''
 from io import StringIO
 import json
 import math
@@ -43,7 +35,7 @@ class ResRule(BaseModel):
     name: str
     desc: str
     reg: str
-    fileId: str
+    field: str
 
 @RuleRouter.post("/add")
 async def AddRule(res: ResRule, token: str = Depends(CheckJWTToken), mysql: Session = Depends(GetMySQL), redis: Session = Depends(GetRedis(0))): 
@@ -53,7 +45,7 @@ async def AddRule(res: ResRule, token: str = Depends(CheckJWTToken), mysql: Sess
         rule = Rule()
         rule.rule_name = requestBody.name
         rule.desc = requestBody.desc
-        reg = {"op":"is", "val": requestBody.reg, "empty": False, "fieId": requestBody.fileId}
+        reg = {"op":"is", "val": requestBody.reg, "empty": False, "field": requestBody.field}
         rule.reg = json.dumps(reg)
         rule.custom = 0
         rule.datetime = datetime.now()
